@@ -95,7 +95,7 @@ public class BlockedPotionsListener extends AbstractListener {
 
     @EventHandler
     public void onItemInteract(UseItemEvent event) {
-        ConfigurationManager cfg = getPlugin().getGlobalStateManager();
+        /*ConfigurationManager cfg = getPlugin().getGlobalStateManager();
         WorldConfiguration wcfg = cfg.get(event.getWorld());
         ItemStack item = event.getItemStack();
 
@@ -169,7 +169,7 @@ public class BlockedPotionsListener extends AbstractListener {
                     event.setCancelled(true);
                 }
             }
-        }
+        }*/
     }
 
 }

@@ -687,6 +687,13 @@ public class EventAbstractionListener extends AbstractListener {
 
     @EventHandler(ignoreCancelled = true)
     public void onEntityDamage(EntityDamageEvent event) {
+        World world = event.getEntity().getWorld();
+        //Arefy network
+        if(world.getName().toLowerCase().startsWith("islas"))
+        {
+            return;
+        }
+
         if (event instanceof EntityDamageByBlockEvent) {
             @Nullable Block attacker = ((EntityDamageByBlockEvent) event).getDamager();
 
@@ -708,7 +715,7 @@ public class EventAbstractionListener extends AbstractListener {
                 ItemStack item = ((Player) damager).getItemInHand();
 
                 if (item != null) {
-                    Events.fireToCancel(event, new UseItemEvent(event, create(damager), event.getEntity().getWorld(), item));
+                    Events.fireToCancel(event, new UseItemEvent(event, create(damager), world, item));
                 }
             }
         }
