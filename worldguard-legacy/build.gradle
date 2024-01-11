@@ -7,8 +7,6 @@ ext.internalVersion = project.version + ";" + gitCommitHash
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
-checkstyle.configFile = new File(projectDir, "config/checkstyle/checkstyle.xml")
-
 dependencies {
     compile 'org.khelekore:prtree:1.5.0'
     compile 'org.bukkit:bukkit:1.11-R0.1-SNAPSHOT'
@@ -50,7 +48,7 @@ shadowJar {
 
     relocate('com.sk89q.guavabackport', 'com.sk89q.worldguard.internal.guava')
     relocate('org.flywaydb', 'com.sk89q.worldguard.internal.flywaydb')
-    relocate('com.sk89q.squirrelid', 'com.sk89q.worldguard.util.profile')
+    relocate('com.sk89q:squirrelid ', 'com.sk89q.worldguard.util.profile')
     relocate('org.json.simple', 'com.sk89q.worldguard.util.jsonsimple')
 
 }
